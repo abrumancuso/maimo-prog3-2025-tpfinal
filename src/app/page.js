@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="space-y-16">
@@ -34,38 +36,41 @@ export default function Home() {
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-orange-200/40 via-orange-100/40 to-amber-100/60 blur-2xl" />
-          <div className="relative h-72 w-full rounded-[28px] border border-orange-200 bg-white p-6 shadow-xl flex flex-col justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-100 shadow">
-                <span className="text-xl">🐾</span>
-              </div>
-              <div>
-                <p className="text-xs text-zinc-500">Historia en Petify</p>
-                <p className="text-sm font-semibold text-zinc-900">
-                  Abril + Luna
-                </p>
-              </div>
-            </div>
+  <div className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-orange-200/40 via-orange-100/40 to-amber-100/60 blur-2xl" />
+  <div className="relative h-72 w-full rounded-[28px] border border-orange-200 bg-white p-6 shadow-xl flex flex-col justify-between">
 
-            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-              “Luna apareció en mi barrio en pleno invierno. La publiqué en
-              Petify con unas fotos y un poco de su historia. A los pocos días
-              una familia de CABA se enamoró de ella y hoy duerme en una cama
-              calentita.”
-            </p>
+  <div className="flex items-center gap-3">
+  <div className="h-12 w-12 rounded-full overflow-hidden">
+    <Image
+      src="/luna.png"
+      alt="Luna"
+      width={48}
+      height={48}
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-            <div className="flex flex-wrap gap-2 text-[11px] text-zinc-700">
-              <span className="rounded-full bg-orange-50 px-3 py-1">
-                Perra mediana · 2 años
-              </span>
-              <span className="rounded-full bg-orange-50 px-3 py-1">
-                Convive con otros perros
-              </span>
-          
-            </div>
-          </div>
-        </div>
+  <div>
+    <p className="text-xs text-zinc-500">Historia en Petify</p>
+    <p className="text-sm font-semibold text-zinc-900">Abril + Luna</p>
+  </div>
+</div>
+    <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
+      “Luna apareció en mi barrio en pleno invierno. La publiqué en Petify con unas fotos
+      y un poco de su historia. A los pocos días una familia de CABA se enamoró de ella
+      y hoy duerme en una cama calentita.”
+    </p>
+
+    <div className="flex flex-wrap gap-2 text-[11px] text-zinc-700">
+      <span className="rounded-full bg-orange-50 px-3 py-1">
+        Perra mediana · 2 años
+      </span>
+      <span className="rounded-full bg-orange-50 px-3 py-1">
+        Convive con otros perros
+      </span>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* POR QUÉ EXISTE PETIFY */}
