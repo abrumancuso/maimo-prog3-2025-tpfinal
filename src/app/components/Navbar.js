@@ -17,7 +17,7 @@ export default function Navbar() {
           onClick={() => router.push("/")}
           className="flex items-center gap-3"
         >
-          <div className="relative h-9 w-9">
+          <div className="relative h-20 w-20">
             <Image
               src="/petifylogo.png"
               alt="Petify logo"
