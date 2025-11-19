@@ -15,7 +15,7 @@ export default function QuieroAdoptarPage() {
       age: "",
       location: "",
       household: "",
-      housingType: "",
+      housingType: "", // seguimos usando este nombre porque la API lo espera así
       bio: "",
     },
     validate: (values) => {
@@ -140,50 +140,42 @@ export default function QuieroAdoptarPage() {
             )}
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-1">
-              <label className="text-xs font-medium text-zinc-700">
-                Tipo de vivienda
-              </label>
-              <select
-                name="housingType"
-                value={formik.values.housingType}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
-              >
-                <option value="">Seleccionar</option>
-                <option value="departamento">Departamento</option>
-                <option value="casa_con_patio">Casa con patio</option>
-                <option value="casa_sin_patio">Casa sin patio</option>
-              </select>
-              {formik.touched.housingType && formik.errors.housingType && (
-                <p className="text-xs text-red-500">
-                  {formik.errors.housingType}
-                </p>
-              )}
-            </div>
+          <div className="space-y-1">
+            <label className="text-xs font-medium text-zinc-700">
+              Tipo de convivencia
+            </label>
+            <input
+              type="text"
+              name="household"
+              placeholder="Solo, pareja, familia, hijes, etc."
+              value={formik.values.household}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
+            />
+            {formik.touched.household && formik.errors.household && (
+              <p className="text-xs text-red-500">{formik.errors.household}</p>
+            )}
+          </div>
 
-            <div className="space-y-1">
-  <label className="text-xs font-medium text-zinc-700">
-    ¿Dónde vivís? (tipo de vivienda)
-  </label>
-  <input
-    type="text"
-    name="tipoVivienda"
-    placeholder="Departamento, casa con patio, casa sin patio, etc."
-    value={formik.values.tipoVivienda}
-    onChange={formik.handleChange}
-    onBlur={formik.handleBlur}
-    className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
-  />
-  {formik.touched.tipoVivienda && formik.errors.tipoVivienda && (
-    <p className="text-xs text-red-500">
-      {formik.errors.tipoVivienda}
-    </p>
-  )}
-</div>
-
+          <div className="space-y-1">
+            <label className="text-xs font-medium text-zinc-700">
+              ¿Dónde vivís? (tipo de vivienda)
+            </label>
+            <input
+              type="text"
+              name="housingType" // texto libre pero mismo nombre que espera la API
+              placeholder="Departamento, casa con patio, casa sin patio, etc."
+              value={formik.values.housingType}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
+            />
+            {formik.touched.housingType && formik.errors.housingType && (
+              <p className="text-xs text-red-500">
+                {formik.errors.housingType}
+              </p>
+            )}
           </div>
 
           <div className="space-y-1">
