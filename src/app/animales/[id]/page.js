@@ -125,21 +125,21 @@ export default function AnimalDetailPage() {
         </div>
       )}
 
-      <section className="relative overflow-hidden rounded-[32px] border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-lg">
-        <div className="grid gap-8 md:grid-cols-[1.1fr,1.2fr] md:items-center">
-          <div className="relative">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl bg-orange-100 shadow-md">
-              {animal.image && (
-                <Image
-                  src={`/${animal.image}`}
-                  alt={animal.name}
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-              )}
-            </div>
-          </div>
+<section className="relative overflow-hidden rounded-4xl border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-lg">
+  <div className="grid gap-8 md:grid-cols-[1.1fr,1.2fr] md:items-center">
+    <div className="relative">
+      <div className="relative aspect-video w-full overflow-hidden rounded-3xl bg-orange-100 shadow-md">
+        {animal.image && (
+          <Image
+            src={`/${animal.image}`}
+            alt={animal.name}
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        )}
+      </div>
+    </div>
 
           <div className="space-y-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">

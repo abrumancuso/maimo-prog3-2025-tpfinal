@@ -165,24 +165,25 @@ export default function QuieroAdoptarPage() {
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-medium text-zinc-700">
-                ¿Con quién vivís?
-              </label>
-              <input
-                type="text"
-                name="household"
-                value={formik.values.household}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder="Solo, pareja, familia, niñes, otras mascotas..."
-                className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
-              />
-              {formik.touched.household && formik.errors.household && (
-                <p className="text-xs text-red-500">
-                  {formik.errors.household}
-                </p>
-              )}
-            </div>
+  <label className="text-xs font-medium text-zinc-700">
+    ¿Dónde vivís? (tipo de vivienda)
+  </label>
+  <input
+    type="text"
+    name="tipoVivienda"
+    placeholder="Departamento, casa con patio, casa sin patio, etc."
+    value={formik.values.tipoVivienda}
+    onChange={formik.handleChange}
+    onBlur={formik.handleBlur}
+    className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
+  />
+  {formik.touched.tipoVivienda && formik.errors.tipoVivienda && (
+    <p className="text-xs text-red-500">
+      {formik.errors.tipoVivienda}
+    </p>
+  )}
+</div>
+
           </div>
 
           <div className="space-y-1">

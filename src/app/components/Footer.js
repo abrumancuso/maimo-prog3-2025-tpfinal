@@ -1,4 +1,4 @@
-// src/app/components/Footer.js
+
 export default function Footer() {
     return (
       <footer className="mt-12 border-t border-orange-100 bg-white">
