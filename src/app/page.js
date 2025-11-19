@@ -25,7 +25,6 @@ export default function Home() {
 
   return (
     <div className="space-y-16">
-   
       <section className="grid gap-10 md:grid-cols-2 md:items-center">
         <div className="space-y-5">
           <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-orange-600 shadow-sm">
@@ -42,19 +41,23 @@ export default function Home() {
           <p className="max-w-xl text-sm sm:text-base text-zinc-600 leading-relaxed">
             Petify no es solo un listado de perros y gatos. Es un lugar para
             publicar historias reales de adopción: de dónde viene cada animal,
-            cómo es su carácter y qué tipo de hogar necesita.
+            cómo es su carácter, qué rutinas tiene y qué tipo de hogar sería
+            ideal.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href="/animales"
+              href="/quiero-adoptar"
               className="rounded-full bg-orange-500 px-7 py-2 text-sm font-semibold text-white shadow-md hover:bg-orange-400 transition"
             >
               Quiero adoptar
             </Link>
-            <button className="rounded-full border border-orange-200 bg-orange-50 px-7 py-2 text-sm font-semibold text-orange-600 hover:border-orange-400 hover:bg-white transition">
+            <Link
+              href="/publicar-animal"
+              className="rounded-full border border-orange-200 bg-orange-50 px-7 py-2 text-sm font-semibold text-orange-600 hover:border-orange-400 hover:bg-white transition"
+            >
               Quiero publicar un animal
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -82,7 +85,8 @@ export default function Home() {
 
             <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
               “Luna apareció en mi barrio en pleno invierno. Una familia la vio
-              en Petify y hoy duerme en una cama calentita.”
+              en Petify, se animó a conocerla y hoy duerme en una cama
+              calentita. Su historia empezó con un simple mensaje.”
             </p>
 
             <div className="flex flex-wrap gap-2 text-[11px] text-zinc-700">
@@ -92,12 +96,14 @@ export default function Home() {
               <span className="rounded-full bg-orange-50 px-3 py-1">
                 Convive con otros perros
               </span>
+              <span className="rounded-full bg-orange-50 px-3 py-1">
+                Rescatada del barrio
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-    
       <section className="space-y-5">
         <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900">
           ¿Por qué Petify y no otro portal más?
@@ -105,8 +111,12 @@ export default function Home() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
-            Muchos sitios de adopción funcionan como catálogos fríos. Petify
-            nace con otra idea: darle historia y contexto a cada animal.
+            Muchos sitios de adopción funcionan como catálogos fríos, llenos de
+            fichas iguales. En Petify queremos algo distinto: que puedas
+            entender la historia de cada animal, quién lo cuida hoy, qué miedos
+            tiene y qué cosas lo hacen feliz. También te mostramos quién está
+            del otro lado: las personas que quieren adoptar y el tipo de hogar
+            que ofrecen.
           </p>
 
           <div className="space-y-3 text-sm text-zinc-700">
@@ -115,7 +125,8 @@ export default function Home() {
                 Más que una ficha
               </p>
               <p className="text-xs mt-1">
-                Contamos quién es el animal y qué hogar necesita.
+                Cada perfil cuenta de dónde viene el animal, cómo es su
+                personalidad y qué necesita para sentirse seguro y querido.
               </p>
             </div>
 
@@ -124,7 +135,8 @@ export default function Home() {
                 Personas en el centro
               </p>
               <p className="text-xs mt-1">
-                El perfil del humano también importa para una adopción sana.
+                El perfil del humano también importa: rutinas, tipo de hogar,
+                experiencias previas y expectativas sobre la adopción.
               </p>
             </div>
 
@@ -133,21 +145,22 @@ export default function Home() {
                 Puente, no catálogo
               </p>
               <p className="text-xs mt-1">
-                Petify conecta historias reales, no solo publica anuncios.
+                Petify busca hacer de puente entre historias reales: quien
+                rescata, quien adopta y quien acompaña el proceso.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-    
       <section className="space-y-5">
         <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900">
-          ¿Cómo funciona Petify?
+          Cómo usar Petify
         </h2>
 
         <p className="max-w-2xl text-sm sm:text-base text-zinc-600">
-          El flujo está pensado para que sea simple publicar y también adoptar.
+          El flujo está pensado para que publicar o adoptar sea simple y
+          transparente, sin formularios eternos ni letras chicas.
         </p>
 
         <div className="grid gap-5 sm:grid-cols-3">
@@ -156,7 +169,8 @@ export default function Home() {
               Paso 1 · Crear tu perfil
             </p>
             <p className="text-xs text-zinc-600 leading-relaxed">
-              Datos básicos + rutinas del adoptante.
+              Contanos quién sos, cómo es tu día a día y qué tipo de convivencia
+              podés ofrecerle a un animal.
             </p>
           </article>
 
@@ -165,26 +179,28 @@ export default function Home() {
               Paso 2 · Publicar o buscar
             </p>
             <p className="text-xs text-zinc-600 leading-relaxed">
-              Fichas con historia, fotos y convivencia.
+              Subí la historia de un perro o gato que necesite hogar, o
+              explorá perfiles ya publicados para encontrar el match ideal.
             </p>
           </article>
 
           <article className="rounded-2xl border border-orange-100 bg-white p-4 shadow-sm">
             <p className="text-xs font-semibold text-orange-600 mb-1">
-              Paso 3 · Postularse para adoptar
+              Paso 3 · Conectarse
             </p>
             <p className="text-xs text-zinc-600 leading-relaxed">
-              Formulario corto, contacto responsable.
+              A través de los formularios de contacto se inicia la charla entre
+              quienes publican y quienes quieren adoptar, siempre con foco en el
+              bienestar del animal.
             </p>
           </article>
         </div>
       </section>
 
-      
       <section className="space-y-5">
         <div className="flex items-center justify-between gap-2">
           <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900">
-            Animales destacados
+            Perros y gatos que buscan hogar
           </h2>
         </div>
 
