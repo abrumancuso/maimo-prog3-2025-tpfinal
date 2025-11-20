@@ -17,7 +17,7 @@ export default function PublishAnimalForm() {
       size: "",
       location: "",
       description: "",
-      image: "",
+      image: "", 
     },
     validate: (values) => {
       const errors = {};
@@ -32,7 +32,11 @@ export default function PublishAnimalForm() {
     onSubmit: async (values, { resetForm }) => {
       try {
         setError("");
-        await createAnimal(values);
+
+        const payload = { ...values, image: "" };
+
+        await createAnimal(payload);
+
         resetForm();
         setShowSuccess(true);
       } catch (e) {
@@ -191,20 +195,7 @@ export default function PublishAnimalForm() {
             )}
           </div>
 
-          <div className="space-y-1">
-            <label className="text-xs font-medium text-zinc-700">
-              Imagen (URL o nombre de archivo)
-            </label>
-            <input
-              type="text"
-              name="image"
-              value={formik.values.image}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              className="w-full rounded-xl border border-zinc-200 px-3 py-2 text-sm outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-300"
-            />
-          </div>
-
+          
           {error && <p className="text-xs text-red-500">{error}</p>}
 
           <div className="flex justify-end">

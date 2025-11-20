@@ -137,45 +137,42 @@ export default function AdopterDetailPage() {
         </div>
       )}
 
-      <section className="relative overflow-hidden rounded-4xl border border-orange-200 bg-linear-to-br from-orange-50 via-white to-amber-50 p-8 shadow-lg">
-        <div className="grid gap-8 md:grid-cols-[1.1fr,1.2fr] md:items-center">
-          <div className="relative">
-            <div className="relative aspect-video w-full overflow-hidden rounded-3xl bg-orange-100 shadow-md flex items-center justify-center">
-              {adoptante.image && (
-                <Image
-                  src={`/${adoptante.image}`}
-                  alt={adoptante.name}
-                  width={320}
-                  height={240}
-                  className="object-cover rounded-3xl"
-                />
-              )}
-            </div>
-          </div>
+<section className="relative overflow-hidden rounded-4xl border border-orange-200 bg-linear-to-br from-orange-50 via-white to-amber-50 p-8 shadow-lg">
+  <div className="grid gap-8 md:grid-cols-[1.1fr,1.2fr] md:items-center">
+    <div className="relative">
+    <div className="w-full flex justify-center mb-8">
+  <img
+    src={adoptante.image ? `/${adoptante.image}` : "/placeholder.jpg"}
+    alt={adoptante.name}
+    className="w-full max-w-4xl max-h-[420px] object-contain rounded-3xl shadow-md bg-white"
+  />
+</div>
 
-          <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
-              Perfil de adoptante
-            </p>
-            <h1 className="text-2xl sm:text-3xl font-semibold text-zinc-900">
-              {adoptante.name}
-            </h1>
-            <p className="text-xs sm:text-sm text-zinc-600">
-              {adoptante.age} años · {adoptante.household} ·{" "}
-              {adoptante.housingType} · {adoptante.location}
-            </p>
-            <p className="text-sm text-zinc-700 leading-relaxed">
-              {adoptante.bio}
-            </p>
-            <button
-              onClick={() => setShowForm(true)}
-              className="mt-2 rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-orange-400"
-            >
-              Tengo un animal para vos
-            </button>
-          </div>
-        </div>
-      </section>
+    </div>
+
+    <div className="space-y-4">
+      <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+        Perfil de adoptante
+      </p>
+      <h1 className="text-2xl sm:text-3xl font-semibold text-zinc-900">
+        {adoptante.name}
+      </h1>
+      <p className="text-xs sm:text-sm text-zinc-600">
+        {adoptante.age} años · {adoptante.household} · {adoptante.housingType} · {adoptante.location}
+      </p>
+      <p className="text-sm text-zinc-700 leading-relaxed">
+        {adoptante.bio}
+      </p>
+      <button
+        onClick={() => setShowForm(true)}
+        className="mt-2 rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-orange-400"
+      >
+        Tengo un animal para vos
+      </button>
+    </div>
+  </div>
+</section>
+
 
       <section className="max-w-3xl self-center w-full">
         {showForm && (

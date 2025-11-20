@@ -1,81 +1,50 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const router = useRouter();
   const pathname = usePathname();
 
   const isActive = (path) =>
-    pathname === path
-      ? "text-orange-600 font-semibold"
-      : "text-zinc-600 hover:text-orange-500";
+    pathname === path ? "text-orange-500 font-semibold" : "text-zinc-700";
 
   return (
-    <header className="border-b border-orange-200 bg-white/90 backdrop-blur-md shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <button
-          onClick={() => router.push("/")}
-          className="flex items-center gap-3 group"
-        >
-          <div className="relative h-20 w-20">
-            <Image
-              src="/petifylogo.png"
-              alt="Petify logo"
-              fill
-              className="object-contain transition-transform group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="flex flex-col leading-tight text-left">
-            <span className="text-lg font-bold tracking-tight text-zinc-900 group-hover:text-orange-600 transition">
-              Petify
-            </span>
-            <span className="text-xs text-orange-600">
-              Adoptar es conectar
-            </span>
-          </div>
-        </button>
+    <nav className="w-full border-b border-orange-100 bg-white py-4 px-6 flex justify-between items-center">
+      <Link href="/" className="flex items-center gap-2">
+        <img src="petifylogo.png" alt="Petify" className="h-7" />
+        <span className="text-orange-500 text-xs font-semibold">
+          Petify:
+          Adoptar es conectar
+        </span>
+      </Link>
 
-        <nav className="hidden gap-8 text-sm sm:flex">
-          <button
-            onClick={() => router.push("/")}
-            className={`${isActive(
-              "/"
-            )} transition-colors duration-200 font-medium`}
-          >
-            Home
-          </button>
+      <div className="flex items-center gap-8 text-sm">
+        <Link href="/" className={isActive("/")}>
+          Home
+        </Link>
 
-          <button
-            onClick={() => router.push("/animales")}
-            className={`${isActive(
-              "/animales"
-            )} transition-colors duration-200 font-medium`}
-          >
-            Animales
-          </button>
+        <Link href="/animales" className={isActive("/animales")}>
+          Animales
+        </Link>
 
-          <button
-            onClick={() => router.push("/adoptantes")}
-            className={`${isActive(
-              "/adoptantes"
-            )} transition-colors duration-200 font-medium`}
-          >
-            Adoptantes
-          </button>
-        </nav>
+        <Link href="/adoptantes" className={isActive("/adoptantes")}>
+          Adoptantes
+        </Link>
 
-        <div className="flex items-center gap-3 text-sm">
-          <button className="hidden rounded-full border border-orange-200 px-4 py-1.5 text-zinc-700 font-medium transition-all hover:border-orange-500 hover:bg-orange-50 hover:text-orange-600 sm:inline-flex">
-            Iniciar sesión
-          </button>
-
-          <button className="rounded-full bg-orange-500 px-5 py-1.5 text-xs font-semibold text-white shadow transition-all hover:bg-orange-400 hover:shadow-md">
-            Crear cuenta
-          </button>
-        </div>
+        <Link href="/about" className={isActive("/about")}>
+          About
+        </Link>
       </div>
-    </header>
+
+      <div className="flex items-center gap-3">
+        <button className="rounded-full border px-4 py-1.5 text-sm">
+          Iniciar sesión
+        </button>
+        <button className="rounded-full bg-orange-500 px-4 py-1.5 text-sm text-white">
+          Crear cuenta
+        </button>
+      </div>
+    </nav>
   );
 }
