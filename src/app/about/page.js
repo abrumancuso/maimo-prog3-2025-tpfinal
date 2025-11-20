@@ -56,40 +56,54 @@ export default function AboutPage() {
           </div>
         </section>
 
-<div className="mt-10 rounded-3xl border border-orange-100 bg-white p-8 shadow-lg flex flex-col md:flex-row gap-6 items-center">
-  
-  <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-2xl shadow-md bg-orange-50">
-    <img
-      src="/abru.jpg" 
-      alt="Abril Mancuso"
-      className="w-full h-full object-cover"
-    />
-  </div>
+        <div className="mt-16 rounded-[32px] border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-[0_18px_70px_rgba(0,0,0,0.06)]">
+  <div className="flex flex-col md:flex-row items-center gap-10">
 
-  <div className="flex-1 space-y-2">
-    <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
-      Sobre la creadora
-    </p>
+    {/* FOTO CUADRADA */}
+    <div className="w-full max-w-xs overflow-hidden rounded-3xl shadow-lg">
+      <img
+        src="/abru.jpg"
+        alt="Abril Mancuso"
+        className="w-full h-72 object-cover"
+      />
+    </div>
 
-    <h3 className="text-xl font-semibold text-zinc-900">
-      Abril Mancuso
-    </h3>
+    {/* TEXTO */}
+    <div className="flex-1 text-center md:text-left space-y-4">
+      <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+        Creadora de Petify
+      </p>
 
-    <p className="text-sm text-zinc-600 leading-relaxed">
-      Soy estudiante de <span className="font-medium">Tecnología Multimedial</span> en la 
-      <span className="font-medium"> Universidad Maimónides</span>.  
-      Siempre tuve una conexión muy profunda con los animales y este proyecto 
-      fue la oportunidad perfecta para crear algo que impulse la 
-      <span className="font-medium"> adopción responsable</span>.
-    </p>
+      <h3 className="text-2xl sm:text-3xl font-semibold text-zinc-900">
+        Abril Mancuso
+      </h3>
 
-    <p className="text-sm text-zinc-600 leading-relaxed">
-      Petify nace desde el amor y el compromiso: quería que más personas 
-      encuentren a ese compañero ideal y que más animales tengan una segunda 
-      oportunidad en un hogar lleno de cuidado y empatía.
-    </p>
+      <p className="text-sm text-zinc-700 leading-relaxed max-w-xl">
+        Soy estudiante de <span className="font-medium">Tecnología Multimedial</span> en la
+        <span className="font-medium"> Universidad Maimónides</span>.  
+        Siempre tuve una conexión especial con los animales, y este proyecto fue una oportunidad perfecta para unir diseño, tecnología y una causa que me importa mucho: impulsar la 
+        <span className="font-medium"> adopción responsable</span>.
+      </p>
+
+      <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-1">
+        <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+          Diseño + Tecnología
+        </span>
+        <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+          Adopción Responsable
+        </span>
+        <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+          Proyecto Universitario
+        </span>
+      </div>
+
+    </div>
+
   </div>
 </div>
+
+
+
 
       </main>
     );
